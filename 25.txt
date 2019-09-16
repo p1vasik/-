@@ -1,0 +1,25 @@
+
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+
+namespace dNumbers
+{
+     class Program
+    {
+        static void Main()
+    {
+        int prev = 0;
+        int current = 1;
+        int index = 1;
+        while (current.ToString().Length != 1000)
+        {
+            var temp = current;
+            current = prev + current;
+            prev = temp;
+            index++;
+        }
+        Console.WriteLine(index);
+    }
+}
+}
