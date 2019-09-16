@@ -1,0 +1,33 @@
+using System;
+
+namespace FriendlyNumbers
+{
+    class Program
+    {
+        public static void Main()
+        {
+            double friendlySum = 0;
+            for (int i = 1; i < 10000; i++)
+            {
+                int first = Divider(i);
+                int second = Divider(first);
+                if (i != first && i == second)
+                    friendlySum += i;
+            }
+            Console.WriteLine(friendlySum);
+        }
+
+        public static int Divider(int x)
+        {
+            int dividorSum = 0;
+            for (int i = 1; i < x; i++)
+            {
+                if (x % i == 0)
+                    dividorSum += i;
+            }
+            return dividorSum;
+        }
+
+       
+    }
+}
